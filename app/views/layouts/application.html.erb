@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookers2</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <% if user_signed_in? %>
+        <li>
+          <p>Home（ユーザ詳細画面）</p>
+        </li>
+        <li>
+         <p>Users（ユーザ一覧画面）</p>
+        </li>
+        <li>
+          <p>Books（本一覧画面）</p>
+        </li>
+        <li>
+          <%= link_to "logout", destroy_user_session_path, method: :delete %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to "Home", root_path %>
+        </li>
+        <li>
+          <p>About</p>
+        </li>
+        <li>
+          <%= link_to "sign up", new_user_registration_path %>
+        </li>
+        <li>
+          <%= link_to "login", new_user_session_path %>
+        </li>
+      <% end %>
+    </header>
+    <main>
+    <%= yield %>
+      
+    </main>
+    <footer>
+      <p>
+        CopyRight Infratop.inc
+      </p>
+    </footer>
+  </body>
+</html>
