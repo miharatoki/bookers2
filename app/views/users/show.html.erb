@@ -1,9 +1,13 @@
-<%= render 'users/list' %>
-<%= render 'books/list', book:@book %>
+<div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <%= render 'users/list' %>
+        <%= render 'books/list', book:@book, user:@user %>
+      </div>
 
-<h2>Books</h2>
-<table>
-  
-</table>
-
-<%= render 'users/table', book:@books %>
+      <div class="col-md-8 offset-md-1">
+        <h2>Books</h2>
+        <%= render 'users/table', book:@books, user:@user %>
+      </div>
+    </div>
+</div>

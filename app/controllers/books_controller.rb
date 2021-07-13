@@ -12,18 +12,18 @@ class BooksController < ApplicationController
   def index
     @books = Book.all
     @book = Book.new
-    @User = current_user
+    @user = current_user
   end
 
   def show
     @book = Book.new
     @books = Book.find(params[:id])
   end
-  
+
   def edit
     @book = Book.find(params[:id])
   end
-  
+
   def update
     book = Book.find(params[:id])
     if book.update(book_params)
@@ -31,12 +31,12 @@ class BooksController < ApplicationController
       redirect_to book_path(book.id)
     end
   end
-  
+
   def destroy
     book = Book.find(params[:id])
     book.destroy
   end
-  
+
   private
   def book_params
     params.require(:book).permit(:title, :body)
