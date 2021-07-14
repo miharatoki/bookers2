@@ -27,13 +27,27 @@ div.field,div.actions{
   margin-bottom: 10px;
 }
 
-.profile{
-  margin:10px;
+div ul{
+ color: red; 
 }
 
 h2{
   margin-top: 20px;
 }
+
+h3{
+  color: red;
+}
+
+.error-explanation{
+  color: red;
+}
+
+.profile{
+  margin:10px;
+}
+
+
 
 #notice{
   color: green;
