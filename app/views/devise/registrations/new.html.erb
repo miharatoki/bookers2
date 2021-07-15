@@ -1,9 +1,22 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-8 col-lgl-5 px-5 ">
-
+      
       <h2>Sign up</h2>
-
+      <div class="error-explanation">
+       <% if @user.errors.any? %>
+          <h2>
+           <%= @user.errors.count %> errors prohibited this user from being saved:
+          </h2>
+         <br />
+          <ul>
+            <% @user.errors.full_messages.each do |message| %>
+             <li><%= message %></li> 
+            <% end %>
+         </ul>
+       <% end %>
+      </div>
+      
       <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
 
         <div class="field">
