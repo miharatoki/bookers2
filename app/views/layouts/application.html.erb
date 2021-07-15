@@ -56,8 +56,9 @@
       </nav>
     </header>
     <main>
-      <p id="notice"><%= notice %></p>
-      <p id="notice"><%= alert %></p>
+      <p id="notice">
+        <%= flash[:notice] %>
+      </p>
       <%= yield %>
 
     </main>
